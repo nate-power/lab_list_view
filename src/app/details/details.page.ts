@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-details',
@@ -8,12 +9,13 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetailsPage implements OnInit {
 
-  item = ""
+  value = ""
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private storage: Storage, private router: Router) { }
 
   ngOnInit() {
-    this.item = this.route.snapshot.queryParamMap.get('name')
+    this.value = this.route.snapshot.queryParamMap.get('value')
   }
+  
 
 }

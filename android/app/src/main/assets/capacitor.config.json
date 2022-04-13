@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "lab_list_view",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

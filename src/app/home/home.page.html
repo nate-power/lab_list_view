@@ -7,15 +7,17 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">List View</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
+  <ion-item>
+    <ion-label position="stacked">Item</ion-label>
+    <ion-input [(ngModel)]="element" clearInput placeholder="Enter item name here"></ion-input>
+    <ion-buttons>
+      <ion-button (click)="addElement()">Add Item</ion-button>
+    </ion-buttons>
+  </ion-item>
     <ion-list>
-      <ion-item *ngFor="let item of itemList" routerLink="/details" [queryParams]="{name: item}" style="cursor: pointer;">
-        {{item}}
-      </ion-item>      
+      <ion-item *ngFor="let element of elementList">
+        <p style="cursor: pointer;" routerLink="/details" [queryParams]="{value: element.value}">{{element.value}}</p>
+        <ion-icon slot="end" name="trash" size="large" style="cursor: pointer;" (click)="removeElement(element.key)"></ion-icon>
+      </ion-item> 
     </ion-list>
 </ion-content>
