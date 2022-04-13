@@ -42,7 +42,6 @@ export class HomePage implements OnInit {
   removeElement = async (key: string) => {
     await this.storage.remove(key)
     .then(() => {
-      console.log("works")
       this.getAllElements()
     })
     
